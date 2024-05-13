@@ -2,59 +2,58 @@
 <html>
 
 <head>
-  <title>Chaeyoung Leee | UI Design Programming 1</title>
+  <title>Chaeyoung Lee | UI Design Programming 1</title>
   <meta charset="utf-8" />
   <style>
+    body {
+      background-color: beige; /* Sets the background color to beige */
+    }
     #title {
       color: blue;
-      font-size: 24px;  /* Change size as needed */
+      font-size: 50px; /* Change size as needed */
       font-weight: bold;
     }
     #ascii-art {
-      display: none;  /* Hidden by default */
+      display: none; /* Hidden by default */
       white-space: pre; /* Ensures spacing and line breaks are preserved */
       font-family: monospace; /* Gives the ASCII art a proper typographic style */
+    }
+    button {
+      background-color: blue; /* Same blue as the title */
+      color: white; /* Text color for contrast */
+      font-size: 16px; /* Larger font size */
+      padding: 10px 20px; /* Padding around text */
+      border: none; /* No border */
+      cursor: pointer; /* Cursor indicates button */
+      margin-right: 10px; /* Space between buttons */
+    }
+    #button-container {
+      display: flex; /* Aligns buttons side by side */
+      justify-content: start; /* Aligns buttons to the start of the container */
     }
   </style>
 </head>
 
 <body>
 
-  <!-- this is where my code is-->
+  <!-- this is where my code is -->
   <div id="grid">
     <div id="left-column" class="scroll">
 
-      <!-- about me-->
-      <h1 id="title">Chaeyoung Lee</h1>  
+      <!-- about me -->
+      <h1 id="title">Chaeyoung Lee</h1>
       <p class="desc">This is my website for [UI Design Programming 1] Class.</p>
       <ul>
         <li>My favorite food is ...</li>
         <li>My favorite song is...</li>
         <li>My favorite website is <a href="">Craigslist</a></li>
       </ul>
-      <button id="open-button">Open</button>
+      <div id="button-container">
+        <button id="open-button">My House</button>
+        <button id="thing-button">My Thing</button>
+      </div>
       <pre id="ascii-art">
       _    _
      | |  | |
      | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
-     |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
-     | |  | | (_| | | | | (_| | | | | | | (_| | | | |
-     |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                         __/ |
-                        |___/
-      </pre>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("open-button").addEventListener("click", function() {
-      var asciiArt = document.getElementById("ascii-art");
-      if (asciiArt.style.display === "none") {
-        asciiArt.style.display = "block";
-      } else {
-        asciiArt.style.display = "none";
-      }
-    });
-  </script>
-</body>
-</html>
+     |  __  |/ _` | '_ \ /
