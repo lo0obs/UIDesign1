@@ -27,6 +27,9 @@
       font-size: 80px;
       font-weight: 800; /* Heading font weight from theme */
     }
+    .desc, ul {
+      margin-bottom: 30px; /* Increased space above the button container */
+    }
     .ascii-art {
       display: none;
       white-space: pre;
@@ -46,6 +49,7 @@
     #button-container {
       display: flex;
       justify-content: center;
+      margin-top: 30px; /* Added space between text and buttons */
     }
     #left-column {
       max-width: 800px;
@@ -65,16 +69,15 @@
       text-align: center;
       border: 2px solid black;
       border-radius: 20px; /* Rounded edges from theme */
-      box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
     }
     .gallery-title {
       color: #A3E636; /* Main theme color */
-      font-size: 18px;
+      font-size: 25px;
       margin-bottom: 10px;
     }
     .preview {
       font-family: 'Arial', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       color: #444;
       padding: 5px;
       height: 150px;
@@ -118,7 +121,6 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
 ===========================^^^^I  I^^^^======
   -  -  -  -  -  -  -  -  -  -  -  -  -  -  
 =============================================
-    
       </pre>
       <pre id="ascii-art-things" class="ascii-art">
  ................................................ 
@@ -145,22 +147,19 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
  ................................................ 
  ................................................ 
  ................................................ 
-     
       </pre>
       <div class="frame">
         <div class="gallery">
           <h2 class="gallery-title">My Instagram</h2>
           <div class="preview">
-            <!-- Simulated preview content -->
             Post 1: 📷 Beautiful Day! <br>
             Post 2: 📷 Out with friends <br>
             More posts...
           </div>
         </div>
         <div class="gallery">
-          <h2 class="gallery-title">My Works</h2>
+          <h2 the="gallery-title">My Works</h2>
           <div class="preview">
-            <!-- Simulated preview content -->
             Work 1: 🎨 New Design <br>
             Work 2: 🎨 Launching soon! <br>
             More works...
@@ -173,22 +172,14 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
   <script>
     document.getElementById("open-button").addEventListener("click", function() {
       var asciiArtHouse = document.getElementById("ascii-art-house");
-      if (asciiArtHouse.style.display === "none") {
-        asciiArtHouse.style.display = "block";
-        document.getElementById("ascii-art-things").style.display = "none";
-      } else {
-        asciiArtHouse.style.display = "none";
-      }
+      asciiArtHouse.style.display = asciiArtHouse.style.display === "none" ? "block" : "none";
+      document.getElementById("ascii-art-things").style.display = "none";
     });
 
     document.getElementById("thing-button").addEventListener("click", function() {
       var asciiArtThings = document.getElementById("ascii-art-things");
-      if (asciiArtThings.style.display === "none") {
-        asciiArtThings.style.display = "block";
-        document.getElementById("ascii-art-house").style.display = "none;
-      } else {
-        asciiArtThings.style.display = "none";
-      }
+      asciiArtThings.style.display = asciiArtThings.style.display === "none" ? "block" : "none";
+      document.getElementById("ascii-art-house").style.display = "none";
     });
   </script>
 </body>
