@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <style>
     body {
-      background-color: #fcfcca; /* Theme background color */
+      background-color: #E0E7F1; /* Theme background color */
       margin: 0;
       height: 100vh;
       display: flex;
@@ -23,9 +23,9 @@
       width: 100%;
     }
     #title {
-      color: #87CEEB; /* Main theme color */
+      color: #A3E636; /* Main theme color */
       font-size: 80px;
-      font-weight: 700; /* Heading font weight from theme */
+      font-weight: 800; /* Heading font weight from theme */
     }
     .ascii-art {
       display: none;
@@ -33,14 +33,14 @@
       font-family: monospace;
     }
     button {
-      background-color: #87CEEB; /* Main theme color */
+      background-color: #A3E636; /* Main theme color */
       color: white;
       font-size: 16px;
       padding: 10px 40px;
-      border: none;
+      border: 2px solid black; /* Black outline for buttons */
       cursor: pointer;
       margin-right: 10px;
-      border-radius: 0px; /* Base border radius from theme */
+      border-radius: 20px; /* Rounded edges from theme */
       box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); /* Base box shadow from theme */
     }
     #button-container {
@@ -60,13 +60,13 @@
     }
     .gallery {
       flex-grow: 1;
-      background-color: ivory; /* Ivory background not specified in theme, kept as is */
+      background-color: ivory; /* Keeping ivory background for contrast */
       padding: 10px;
       text-align: left;
-      border-radius: 0px; /* Base border radius from theme */
+      border-radius: 20px; /* Rounded edges from theme */
     }
     .gallery-title {
-      color: #87CEEB; /* Main theme color */
+      color: #A3E636; /* Main theme color */
       font-size: 18px;
       margin-bottom: 10px;
     }
@@ -183,7 +183,7 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
       var asciiArtThings = document.getElementById("ascii-art-things");
       if (asciiArtThings.style.display === "none") {
         asciiArtThings.style.display = "block";
-        document.getElementById("ascii-art-house").style.display = "none";
+        document.getElementById("ascii-art-house").style.display = "none;
       } else {
         asciiArtThings.style.display = "none";
       }
