@@ -39,6 +39,7 @@
       border: none;
       cursor: pointer;
       margin-right: 10px;
+      border-radius: 8px; /* Rounded edges */
     }
     #button-container {
       display: flex;
@@ -71,6 +72,16 @@
       height: auto;
       margin-bottom: 5px;
     }
+    .preview {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: #444;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 5px;
+      height: 150px; /* Fixed height for consistent appearance */
+      overflow-y: auto; /* Allows scrolling */
+    }
   </style>
 </head>
 
@@ -82,71 +93,55 @@
       <ul>
         <li>My favorite food is ...</li>
         <li>My favorite song is...</li>
-        <li>My favorite website is <a href="">https://spacetypegenerator.com/</a></li>
+        <li>My favorite website is <a href="">Craigslist</a></li>
       </ul>
       <div id="button-container">
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
       </div>
       <pre id="ascii-art-house" class="ascii-art">
-           /\     /\  //\\         /\
-          //\\   //\////\\\\  /\  //\\
-         /  ^ \ /^^/^  ^  ^ \/^░/  ^ \
-    /\  / ^   /  ^/ ^ ^ ^   ^(░)) ^^  \
-\  / ^\/ ^ ^   \|||/ ^    (░░)_)^ ^    \       *
- \/^  ^\ ^ ^ ^ (o.o)  ^  ^ _░ _  ^   ^  \     /|\
-^ \ ^  _\___ooO_(=)_Ooo___|  |_____^ ^   \   /||o\
-^ ^\  /______________________________\ ^ ^\ /|o|||
-^ ^  /___________chaeyoung lee________\  ^  /|||||o
-  ^    ||___|___|||||||||__|___|__|||      /||o||||
-    ^  ||___|___||||||||| .|___|__|||_._._._._.| |
-=||=|=|||||||||||||||()|__|()|||||||=|=|=|=|=|=| |o
-oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
-    ,,    o       "=="  ,,
-        /|\ ,,    "=="  ,, _,
-  ,,      / \     "=="    \__, 
-    ,,        ,,  "=="        /\ \
-===========================^^^^I  I^^^^======
-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
-=============================================
-    
+  chaeyoung lee
+     _____
+    /     \
+   /_______\
+   |  ___  |
+   | |   | |
+   | |___| |
+   |_______|
       </pre>
       <pre id="ascii-art-things" class="ascii-art">
- ................................................ 
- ................................................ 
- ................................................ 
- .....                             .............. 
- ...                                 ............ 
- ..  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@. ............ 
- ..  @@@                         @@@ ............ 
- ..  @@@ ...... #@@- %@@  .....  @@@ ............ 
- ..  @@@ ...... =@%@ *%@  .....  @@@ ............ 
- ..  @@@ ...... =@#%%.%@  .....  @@@ ............ 
- ..  @@@ ...... =@##%%%@  .....  @@@ ...     .... 
- ..  @@@ ...... =@%%%#%@  .....  @@@ ..       ... 
- ..  @@@ ...... =@@ @%%@  .....  @@@ .. @@ @  ... 
- ..  @@@ ...... #@@  @@@  .....  @@@     @ =@     
- ..  @@@                         @@@  @@@@@@@@@@  
- ..  @@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@  @       * @ 
- ..   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@   @@     @@@  
- .                                      -@@@.     
- . @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          .. 
- .                                     .......... 
- .                                    ........... 
- ................................................ 
- ................................................ 
- ................................................  
+   ( (
+    ) )
+  ......
+  |    |]  
+  \    /   
+   `--'   
+ ____||____
+|          |
+|__________|
+   |    |    
+   |____|   
+    |  |    
+   (__)     
       </pre>
       <div class="frame">
         <div class="gallery">
           <h2 class="gallery-title">My Instagram</h2>
-          <img src="placeholder-image.jpg" alt="Instagram Gallery Placeholder">
-          <p>Gallery view of Instagram profile.</p>
+          <div class="preview">
+            <!-- Simulated preview content -->
+            Post 1: 📷 Beautiful Day! <br>
+            Post 2: 📷 Out with friends <br>
+            More posts...
+          </div>
         </div>
         <div class="gallery">
           <h2 class="gallery-title">My Works</h2>
-          <img src="placeholder-image.jpg" alt="Works Gallery Placeholder">
-          <p>Gallery view of another Instagram profile.</p>
+          <div class="preview">
+            <!-- Simulated preview content -->
+            Work 1: 🎨 New Design <br>
+            Work 2: 🎨 Launching soon! <br>
+            More works...
+          </div>
         </div>
       </div>
     </div>
