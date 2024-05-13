@@ -2,6 +2,16 @@
 <html>
 
 <head>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'fhk2owm',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
   <title>Chaeyoung Lee | UI Design Programming 1</title>
   <meta charset="utf-8" />
   <style>
@@ -34,7 +44,7 @@
       color: #A3E636; /* Main theme color */
       font-size: 80px;
       font-weight: 800; /* Heading font weight from theme */
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 1px 0 #000, 2px 2px 0 #000;
     }
     .desc, ul {
       margin-bottom: 30px; /* Increased space above the button container */
