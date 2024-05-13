@@ -6,13 +6,14 @@
   <meta charset="utf-8" />
   <style>
     body {
-      background-color: beige;
+      background-color: #fcfcca; /* Theme background color */
       margin: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      font-weight: 400; /* Base font weight from theme */
     }
     #grid {
       display: flex;
@@ -22,9 +23,9 @@
       width: 100%;
     }
     #title {
-      color: blue;
+      color: #87CEEB; /* Main theme color */
       font-size: 80px;
-      font-weight: bold;
+      font-weight: 700; /* Heading font weight from theme */
     }
     .ascii-art {
       display: none;
@@ -32,15 +33,15 @@
       font-family: monospace;
     }
     button {
-      background-color: blue;
+      background-color: #87CEEB; /* Main theme color */
       color: white;
       font-size: 16px;
       padding: 10px 40px;
       border: none;
       cursor: pointer;
       margin-right: 10px;
-      border-radius: 100px; /* Rounded edges */
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      border-radius: 0px; /* Base border radius from theme */
+      box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); /* Base box shadow from theme */
     }
     #button-container {
       display: flex;
@@ -55,17 +56,17 @@
       justify-content: space-between;
       width: 100%;
       margin-top: 20px;
-      gap: 10px; /* Space between gallery frames */
+      gap: 10px;
     }
     .gallery {
       flex-grow: 1;
-      background-color: ivory; /* Ivory background fill */
+      background-color: ivory; /* Ivory background not specified in theme, kept as is */
       padding: 10px;
       text-align: left;
-      border-radius: 10px; /* Rounded edges */
+      border-radius: 0px; /* Base border radius from theme */
     }
     .gallery-title {
-      color: blue;
+      color: #87CEEB; /* Main theme color */
       font-size: 18px;
       margin-bottom: 10px;
     }
@@ -74,8 +75,8 @@
       font-size: 12px;
       color: #444;
       padding: 5px;
-      height: 150px; /* Fixed height for consistent appearance */
-      overflow-y: auto; /* Allows scrolling */
+      height: 150px;
+      overflow-y: auto;
     }
   </style>
 </head>
