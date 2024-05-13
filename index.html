@@ -7,6 +7,18 @@
   <style>
     body {
       background-color: beige; /* Sets the background color to beige */
+      margin: 0; /* Removes default margin */
+      height: 100vh; /* Full viewport height */
+      display: flex; /* Enables flexbox */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+    #grid {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      flex-direction: column; /* Stack children vertically */
+      width: 100%; /* Fit to container width */
     }
     #title {
       color: blue;
@@ -29,18 +41,17 @@
     }
     #button-container {
       display: flex; /* Aligns buttons side by side */
-      justify-content: start; /* Aligns buttons to the start of the container */
+      justify-content: center; /* Center buttons horizontally */
+    }
+    #left-column {
+      max-width: 600px; /* Maximum width of the column */
     }
   </style>
 </head>
 
 <body>
-
-  <!-- this is where my code is -->
   <div id="grid">
     <div id="left-column" class="scroll">
-
-      <!-- about me -->
       <h1 id="title">Chaeyoung Lee</h1>
       <p class="desc">This is my website for [UI Design Programming 1] Class.</p>
       <ul>
@@ -52,7 +63,6 @@
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
       </div>
-      <!-- ASCII Art for "My House" -->
       <pre id="ascii-art-house" class="ascii-art">
   chaeyoung lee
      _____
@@ -63,7 +73,6 @@
    | |___| |
    |_______|
       </pre>
-      <!-- ASCII Art for "My Things" -->
       <pre id="ascii-art-things" class="ascii-art">
    ( (
     ) )
@@ -87,7 +96,7 @@
       var asciiArtHouse = document.getElementById("ascii-art-house");
       if (asciiArtHouse.style.display === "none") {
         asciiArtHouse.style.display = "block";
-        document.getElementById("ascii-art-things").style.display = "none"; // Hide the other ASCII art
+        document.getElementById("ascii-art-things").style.display = "none";
       } else {
         asciiArtHouse.style.display = "none";
       }
@@ -97,7 +106,7 @@
       var asciiArtThings = document.getElementById("ascii-art-things");
       if (asciiArtThings.style.display === "none") {
         asciiArtThings.style.display = "block";
-        document.getElementById("ascii-art-house").style.display = "none"; // Hide the other ASCII art
+        document.getElementById("ascii-art-house").style.display = "none";
       } else {
         asciiArtThings.style.display = "none";
       }
