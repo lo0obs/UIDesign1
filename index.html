@@ -6,45 +6,70 @@
   <meta charset="utf-8" />
   <style>
     body {
-      background-color: beige; /* Sets the background color to beige */
-      margin: 0; /* Removes default margin */
-      height: 100vh; /* Full viewport height */
-      display: flex; /* Enables flexbox */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
+      background-color: beige;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     #grid {
       display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      flex-direction: column; /* Stack children vertically */
-      width: 100%; /* Fit to container width */
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
     }
     #title {
       color: blue;
-      font-size: 50px; /* Change size as needed */
+      font-size: 50px;
       font-weight: bold;
     }
     .ascii-art {
-      display: none; /* Hidden by default */
-      white-space: pre; /* Ensures spacing and line breaks are preserved */
-      font-family: monospace; /* Gives the ASCII art a proper typographic style */
+      display: none;
+      white-space: pre;
+      font-family: monospace;
     }
     button {
-      background-color: blue; /* Same blue as the title */
-      color: white; /* Text color for contrast */
-      font-size: 16px; /* Larger font size */
-      padding: 10px 20px; /* Padding around text */
-      border: none; /* No border */
-      cursor: pointer; /* Cursor indicates button */
-      margin-right: 10px; /* Space between buttons */
+      background-color: blue;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
     }
     #button-container {
-      display: flex; /* Aligns buttons side by side */
-      justify-content: center; /* Center buttons horizontally */
+      display: flex;
+      justify-content: center;
     }
     #left-column {
-      max-width: 600px; /* Maximum width of the column */
+      max-width: 800px;
+      text-align: center;
+    }
+    .frame {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .gallery {
+      border: 1px solid #ccc;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      width: 48%;
+      padding: 10px;
+      text-align: left;
+    }
+    .gallery-title {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 5px;
     }
   </style>
 </head>
@@ -88,6 +113,18 @@
     |  |    
    (__)     
       </pre>
+      <div class="frame">
+        <div class="gallery">
+          <h2 class="gallery-title">My Instagram</h2>
+          <img src="placeholder-image.jpg" alt="Instagram Gallery Placeholder">
+          <p>Gallery view of Instagram profile.</p>
+        </div>
+        <div class="gallery">
+          <h2 class="gallery-title">My Works</h2>
+          <img src="placeholder-image.jpg" alt="Works Gallery Placeholder">
+          <p>Gallery view of another Instagram profile.</p>
+        </div>
+      </div>
     </div>
   </div>
 
