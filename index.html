@@ -3,35 +3,18 @@
 
 <head>
   <script>
-  (function(d) {
-    var config = {
-      kitId: 'fhk2owm',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'fhk2owm',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
+    (function(d) {
+      var config = {
+        kitId: 'fhk2owm',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
   <title>Chaeyoung Lee | UI Design Programming 1</title>
   <meta charset="utf-8" />
   <style>
-    @font-face {
-      font-family: "cofo-flicflac";
-      src: url('path/to/cofo-flicflac-font.woff2') format('woff2'),
-           url('path/to/cofo-flicflac-font.woff') format('woff'); /* Add the path to your font files */
-      font-weight: normal;
-      font-style: normal;
-    }
     body {
       background-color: #E0E7F1; /* Theme background color */
       margin: 0;
@@ -41,16 +24,9 @@
       align-items: center;
       flex-direction: column;
       font-weight: 400; /* Base font weight from theme */
-    }
-    #grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
+      font-family: "gintronic", sans-serif; /* Setting the body font */
     }
     #title {
-      font-family: "cofo-flicflac", sans-serif; /* Custom font */
       color: #A3E636; /* Main theme color */
       font-size: 120px;
       font-weight: 800; /* Heading font weight from theme */
@@ -100,7 +76,6 @@
       border-radius: 20px; /* Rounded edges from theme */
     }
     .gallery-title {
-      font-family: "cofo-flicflac", sans-serif; /* Custom font */
       color: black; /* Main theme color */
       font-weight: 700; /* Heading font weight from theme */
       font-size: 40px;
@@ -122,9 +97,9 @@
     <div id="left-column" class="scroll">
       <h1 id="title">Chaeyoung Lee</h1>
       <p class="desc">This is my website for [UI Design Programming 1] Class.</p>
-        My favorite food is Spagetti<br>
+        My favorite food is Spaghetti<br>
         My favorite song is Sicko Mode by Travis Scott<br>
-        My favorite website is <a href="">https://spacetypegenerator.com/clutter.html</a>
+        My favorite website is <a href="https://spacetypegenerator.com/clutter.html">https://spacetypegenerator.com/clutter.html</a>
       <div id="button-container">
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
