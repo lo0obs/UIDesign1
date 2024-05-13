@@ -1,31 +1,60 @@
-  
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Chaeyoung Lee | UI Design Programming 1</title>
   <meta charset="utf-8" />
+  <style>
+    #title {
+      color: blue;
+      font-size: 24px;  /* Change size as needed */
+      font-weight: bold;
+    }
+    #ascii-art {
+      display: none;  /* Hidden by default */
+      white-space: pre; /* Ensures spacing and line breaks are preserved */
+      font-family: monospace; /* Gives the ASCII art a proper typographic style */
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- this is where my code is-->
   <div id="grid">
-    <div id="left-column" class="scroll">  
-
-      <!-- my favorite pokemon -->
-      <!-- <img src="https://archives.bulbagarden.net/media/upload/thumb/5/53/054Psyduck.png/140px-054Psyduck.png" alt="Psyduck" /> -->
+    <div id="left-column" class="scroll">
 
       <!-- about me-->
-      <h1>[Your Name Here]</h1>  
-      <p class="desc">A short paragraph about you...</p>
+      <h1 id="title">Chaeyoung Lee</h1>  
+      <p class="desc">This is my website for [UI Design Programming 1] Class.</p>
       <ul>
         <li>My favorite food is ...</li>
         <li>My favorite song is...</li>
         <li>My favorite website is <a href="">Craigslist</a></li>
       </ul>
-
+      <button id="open-button">Open</button>
+      <pre id="ascii-art">
+      _    _
+     | |  | |
+     | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
+     |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
+     | |  | | (_| | | | | (_| | | | | | | (_| | | | |
+     |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                         __/ |
+                        |___/
+      </pre>
     </div>
   </div>
+
+  <script>
+    document.getElementById("open-button").addEventListener("click", function() {
+      var asciiArt = document.getElementById("ascii-art");
+      if (asciiArt.style.display === "none") {
+        asciiArt.style.display = "block";
+      } else {
+        asciiArt.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
