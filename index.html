@@ -13,7 +13,7 @@
       font-size: 50px; /* Change size as needed */
       font-weight: bold;
     }
-    #ascii-art {
+    .ascii-art {
       display: none; /* Hidden by default */
       white-space: pre; /* Ensures spacing and line breaks are preserved */
       font-family: monospace; /* Gives the ASCII art a proper typographic style */
@@ -52,8 +52,56 @@
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
       </div>
-      <pre id="ascii-art">
-      _    _
-     | |  | |
-     | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
-     |  __  |/ _` | '_ \ /
+      <!-- ASCII Art for "My House" -->
+      <pre id="ascii-art-house" class="ascii-art">
+  chaeyoung lee
+     _____
+    /     \
+   /_______\
+   |  ___  |
+   | |   | |
+   | |___| |
+   |_______|
+      </pre>
+      <!-- ASCII Art for "My Things" -->
+      <pre id="ascii-art-things" class="ascii-art">
+   ( (
+    ) )
+  ......
+  |    |]  
+  \    /   
+   `--'   
+ ____||____
+|          |
+|__________|
+   |    |    
+   |____|   
+    |  |    
+   (__)     
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("open-button").addEventListener("click", function() {
+      var asciiArtHouse = document.getElementById("ascii-art-house");
+      if (asciiArtHouse.style.display === "none") {
+        asciiArtHouse.style.display = "block";
+        document.getElementById("ascii-art-things").style.display = "none"; // Hide the other ASCII art
+      } else {
+        asciiArtHouse.style.display = "none";
+      }
+    });
+
+    document.getElementById("thing-button").addEventListener("click", function() {
+      var asciiArtThings = document.getElementById("ascii-art-things");
+      if (asciiArtThings.style.display === "none") {
+        asciiArtThings.style.display = "block";
+        document.getElementById("ascii-art-house").style.display = "none"; // Hide the other ASCII art
+      } else {
+        asciiArtThings.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
