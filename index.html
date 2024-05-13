@@ -38,18 +38,18 @@
       font-family: "gintronic", sans-serif; /* Apply 'gintronic' to the body */
       background-color: #E0E7F1;
       margin: 0;
-      height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* Align to the top */
       flex-direction: column;
+      padding-top: 50px; /* Space from the top */
+      min-height: 100vh; /* Ensure it covers the viewport */
+      overflow-y: auto; /* Enable scrolling */
     }
     #grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       width: 100%;
+      max-width: 800px; /* Max width of the content */
+      margin: auto;
     }
     #title {
       font-family: "cofo-flicflac", sans-serif;
@@ -57,9 +57,12 @@
       font-size: 120px;
       font-weight: 800;
       text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 1px 0 #000, 2px 2px 0 #000;
+      margin-top: 0; /* No margin at the top */
+      text-align: center; /* Center the title */
     }
     .desc, ul {
-      margin-bottom: 30px;
+      text-align: center; /* Center description and list */
+      margin-top: 20px; /* Space after title */
     }
     .ascii-art {
       display: none;
@@ -80,11 +83,7 @@
     #button-container {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
-    }
-    #left-column {
-      max-width: 800px;
-      text-align: center;
+      margin-top: 20px;
     }
     .frame {
       display: flex;
