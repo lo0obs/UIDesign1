@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script>
     (function(d) {
@@ -9,31 +8,66 @@
         scriptTimeout: 3000,
         async: true
       },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      h = d.documentElement,
+      t = setTimeout(function() {
+        h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function() {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config)
+        } catch (e) {}
+      };
+      s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
   <title>Chaeyoung Lee | UI Design Programming 1</title>
   <meta charset="utf-8" />
   <style>
+    @font-face {
+      font-family: "cofo-flicflac";
+      src: url('path/to/cofo-flicflac-font.woff2') format('woff2'),
+           url('path/to/cofo-flicflac-font.woff') format('woff'); /* Add the path to your font files */
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
-      background-color: #E0E7F1; /* Theme background color */
+      font-family: "gintronic", sans-serif; /* Apply 'gintronic' to the body */
+      background-color: #E0E7F1;
       margin: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      font-weight: 400; /* Base font weight from theme */
-      font-family: "gintronic", sans-serif; /* Setting the body font */
+      font-weight: 400;
+    }
+    #grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
     }
     #title {
-      color: #A3E636; /* Main theme color */
+      font-family: "cofo-flicflac", sans-serif;
+      color: #A3E636;
       font-size: 120px;
-      font-weight: 800; /* Heading font weight from theme */
+      font-weight: 800;
       text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 1px 0 #000, 2px 2px 0 #000;
     }
     .desc, ul {
-      margin-bottom: 30px; /* Increased space above the button container */
+      margin-bottom: 30px;
     }
     .ascii-art {
       display: none;
@@ -41,20 +75,20 @@
       font-family: monospace;
     }
     button {
-      background-color: #A3E636; /* Main theme color */
+      background-color: #A3E636;
       color: black;
       font-size: 16px;
       padding: 10px 40px;
-      border: 2px solid black; /* Black outline for buttons */
+      border: 2px solid black;
       cursor: pointer;
       margin-right: 10px;
-      border-radius: 20px; /* Rounded edges from theme */
-      box-shadow: 3px 3px 0px 0px rgba(0,0,0,1); /* Base box shadow from theme */
+      border-radius: 20px;
+      box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
     }
     #button-container {
       display: flex;
       justify-content: center;
-      margin-top: 30px; /* Added space between text and buttons */
+      margin-top: 30px;
     }
     #left-column {
       max-width: 800px;
@@ -69,20 +103,21 @@
     }
     .gallery {
       flex-grow: 1;
-      background-color: ivory; /* Keeping ivory background for contrast */
+      background-color: ivory;
       padding: 30px;
       text-align: center;
       border: 2px solid black;
-      border-radius: 20px; /* Rounded edges from theme */
+      border-radius: 20px;
     }
     .gallery-title {
-      color: black; /* Main theme color */
-      font-weight: 700; /* Heading font weight from theme */
+      font-family: "cofo-flicflac", sans-serif;
+      color: black;
+      font-weight: 700;
       font-size: 40px;
       margin-bottom: 10px;
     }
     .preview {
-      font-family: 'Arial', sans-serif;
+      font-family: "gintronic", sans-serif; /* Apply 'gintronic' to body content */
       font-size: 14px;
       color: #444;
       padding: 5px;
@@ -91,67 +126,20 @@
     }
   </style>
 </head>
-
 <body>
   <div id="grid">
     <div id="left-column" class="scroll">
       <h1 id="title">Chaeyoung Lee</h1>
       <p class="desc">This is my website for [UI Design Programming 1] Class.</p>
-        My favorite food is Spaghetti<br>
+        My favorite food is Spagetti<br>
         My favorite song is Sicko Mode by Travis Scott<br>
-        My favorite website is <a href="https://spacetypegenerator.com/clutter.html">https://spacetypegenerator.com/clutter.html</a>
+        My favorite website is <a href="">https://spacetypegenerator.com/clutter.html</a>
       <div id="button-container">
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
       </div>
-      <pre id="ascii-art-house" class="ascii-art">
-           /\     /\  //\\         /\
-          //\\   //\////\\\\  /\  //\\
-         /  ^ \ /^^/^  ^  ^ \/^░/  ^ \
-    /\  / ^   /  ^/ ^ ^ ^   ^(░)) ^^  \
-\  / ^\/ ^ ^   \|||/ ^    (░░)_)^ ^    \       *
- \/^  ^\ ^ ^ ^ (o.o)  ^  ^ _░ _  ^   ^  \     /|\
-^ \ ^  _\___ooO_(=)_Ooo___|  |_____^ ^   \   /||o\
-^ ^\  /______________________________\ ^ ^\ /|o|||
-^ ^  /___________chaeyoung lee________\  ^  /|||||o
-  ^    ||___|___|||||||||__|___|__|||      /||o||||
-    ^  ||___|___||||||||| .|___|__|||_._._._._.| |
-=||=|=|||||||||||||||()|__|()|||||||=|=|=|=|=|=| |o
-oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
-    ,,    o       "=="  ,,
-        /|\ ,,    "=="  ,, _,
-  ,,      / \     "=="    \__, 
-    ,,        ,,  "=="        /\ \
-===========================^^^^I  I^^^^======
-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
-=============================================
-      </pre>
-      <pre id="ascii-art-things" class="ascii-art">
- ................................................ 
- ................................................ 
- ................................................ 
- .....                             .............. 
- ...                                 ............ 
- ..  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@. ............ 
- ..  @@@                         @@@ ............ 
- ..  @@@ ...... #@@- %@@  .....  @@@ ............ 
- ..  @@@ ...... =@%@ *%@  .....  @@@ ............ 
- ..  @@@ ...... =@#%%.%@  .....  @@@ ............ 
- ..  @@@ ...... =@##%%%@  .....  @@@ ...     .... 
- ..  @@@ ...... =@%%%#%@  .....  @@@ ..       ... 
- ..  @@@ ...... =@@ @%%@  .....  @@@ .. @@ @  ... 
- ..  @@@ ...... #@@  @@@  .....  @@@     @ =@     
- ..  @@@                         @@@  @@@@@@@@@@  
- ..  @@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@  @       * @ 
- ..   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@   @@     @@@  
- .                                      -@@@.     
- . @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          .. 
- .                                     .......... 
- .                                    ........... 
- ................................................ 
- ................................................ 
- ................................................ 
-      </pre>
+      <pre id="ascii-art-house" class="ascii-art">...</pre>
+      <pre id="ascii-art-things" class="ascii-art">...</pre>
       <div class="frame">
         <div class="gallery">
           <h2 class="gallery-title">My Instagram</h2>
@@ -172,19 +160,5 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
       </div>
     </div>
   </div>
-
-  <script>
-    document.getElementById("open-button").addEventListener("click", function() {
-      var asciiArtHouse = document.getElementById("ascii-art-house");
-      asciiArtHouse.style.display = asciiArtHouse.style.display === "none" ? "block" : "none";
-      document.getElementById("ascii-art-things").style.display = "none";
-    });
-
-    document.getElementById("thing-button").addEventListener("click", function() {
-      var asciiArtThings = document.getElementById("ascii-art-things");
-      asciiArtThings.style.display = asciiArtThings.style.display === "none" ? "block" : "none";
-      document.getElementById("ascii-art-house").style.display = "none";
-    });
-  </script>
 </body>
 </html>
