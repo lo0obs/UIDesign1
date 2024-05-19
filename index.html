@@ -116,6 +116,21 @@
       height: fit-content;
       overflow-y: auto;
     }
+    #css-still-life {
+      display: none; /* Initially hidden */
+      width: 100%;
+      max-width: 800px; /* Adjust width as needed */
+      margin: auto;
+      background-color: #f5f5f5; /* Background color */
+    }
+    .grid-item {
+      width: 25%; /* Quarter width */
+      height: 150px; /* Fixed height, adjust as needed */
+      float: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid #000; /* Black border for separation */
+    }
   </style>
 </head>
 <body>
@@ -129,6 +144,14 @@
       <div id="button-container">
         <button id="open-button">My House</button>
         <button id="thing-button">My Thing</button>
+        <button id="css-still-life-button">CSS Still Life</button>
+      </div>
+      <div id="css-still-life">
+        <div class="grid-item" style="background-image: url('image1.jpg');"></div>
+        <div class="grid-item" style="background-image: url('image2.jpg');"></div>
+        <div class="grid-item" style="background-image: url('image3.jpg');"></div>
+        <div class="grid-item" style="background-image: url('image4.jpg');"></div>
+        <!-- Add more grid items as needed -->
       </div>
       <pre id="ascii-art-house" class="ascii-art">
                  /\     /\  //\\         /\
@@ -219,6 +242,10 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
       var asciiArtThings = document.getElementById("ascii-art-things");
       asciiArtThings.style.display = asciiArtThings.style.display === "none" ? "block" : "none";
       document.getElementById("ascii-art-house").style.display = "none";
+    });
+    document.getElementById("css-still-life-button").addEventListener("click", function() {
+      var cssStillLife = document.getElementById("css-still-life");
+      cssStillLife.style.display = cssStillLife.style.display === "none" ? "block" : "none";
     });
   </script>
 </body>
