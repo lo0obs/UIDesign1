@@ -1,0 +1,240 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 80px; /* Adjust the size as needed */
+    color: white;
+    margin: 0;
+    font-weight: 100;
+}
+
+#subtitle {
+    position: absolute;
+    top: 105px;
+    right: 40px;
+    font-size: 20px; /* Adjust the size as needed */
+    color: white;
+    margin: 0;
+    font-weight: 20;
+}
+
+#stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Flowers */
+.flower {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+}
+
+/* Define the starting position for the first diagonal row */
+#flower1 {
+    top: 50px;
+    left: 50px;
+}
+
+#flower2 {
+    top: 332px;
+    left: 332px;
+}
+
+#flower3 {
+    top: 614px;
+    left: 614px;
+}
+
+#flower4 {
+    top: 896px;
+    left: 896px;
+}
+
+/* Repeat the pattern across the page */
+#flower5 {
+    top: 50px;
+    left: 332px;
+}
+
+#flower6 {
+    top: 332px;
+    left: 614px;
+}
+
+#flower7 {
+    top: 614px;
+    left: 896px;
+}
+
+#flower8 {
+    top: 896px;
+    left: 1178px;
+}
+
+#flower9 {
+    top: 332px;
+    left: 50px;
+}
+
+#flower10 {
+    top: 614px;
+    left: 332px;
+}
+
+#flower11 {
+    top: 896px;
+    left: 614px;
+}
+
+#flower12 {
+    top: 1178px;
+    left: 896px;
+}
+
+#flower13 {
+    top: 50px;
+    left: 614px;
+}
+
+#flower14 {
+    top: 332px;
+    left: 896px;
+}
+
+#flower15 {
+    top: 614px;
+    left: 1178px;
+}
+
+#flower16 {
+    top: 896px;
+    left: 1460px;
+}
+
+#flower17 {
+    top: 614px;
+    left: 50px;
+}
+
+#flower18 {
+    top: 896px;
+    left: 332px;
+}
+
+#flower19 {
+    top: 1178px;
+    left: 614px;
+}
+
+#flower20 {
+    top: 1460px;
+    left: 896px;
+}
+
+/* Stems */
+.stem {
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: green;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Petals */
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    border-radius: 50px 50px 0 0;
+    transform-origin: bottom center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.petal1 {
+    transform: rotate(0deg) translate(0, -50px);
+    top: 0;
+    left: 25px;
+}
+
+.petal2 {
+    transform: rotate(90deg) translate(0, -50px);
+    top: 25px;
+    left: 50px;
+}
+
+.petal3 {
+    transform: rotate(180deg) translate(0, -50px);
+    top: 50px;
+    left: 25px;
+}
+
+.petal4 {
+    transform: rotate(270deg) translate(0, -50px);
+    top: 25px;
+    left: 0;
+}
+
+/* Patterns for each flower */
+.pattern1 {
+    background: linear-gradient(135deg, rgba(255, 221, 193, 0.8) 25%, rgba(255, 171, 171, 0.8) 50%, rgba(255, 103, 125, 0.8) 75%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><g fill="%23fff" fill-opacity="0.1"><circle cx="20" cy="20" r="20"/></g></svg>');
+    background-size: cover;
+}
+
+.pattern2 {
+    background: linear-gradient(135deg, rgba(193, 255, 215, 0.8) 25%, rgba(171, 255, 171, 0.8) 50%, rgba(103, 255, 103, 0.8) 75%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><g fill="%23fff" fill-opacity="0.1"><circle cx="20" cy="20" r="20"/></g></svg>');
+    background-size: cover;
+}
+
+.pattern3 {
+    background: linear-gradient(135deg, rgba(193, 224, 255, 0.8) 25%, rgba(171, 186, 255, 0.8) 50%, rgba(103, 125, 255, 0.8) 75%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><g fill="%23fff" fill-opacity="0.1"><circle cx="20" cy="20" r="20"/></g></svg>');
+    background-size: cover;
+}
+
+.pattern4 {
+    background: linear-gradient(135deg, rgba(255, 209, 193, 0.8) 25%, rgba(255, 171, 171, 0.8) 50%, rgba(255, 103, 125, 0.8) 75%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><g fill="%23fff" fill-opacity="0.1"><circle cx="20" cy="20" r="20"/></g></svg>');
+    background-size: cover;
+}
+
+/* Flower center */
+.center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 50%;
+    top: 35px;
+    left: 35px;
+}
+
+/* Hover Effects */
+.flower:hover .petal {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 0, 0.8); /* Change to yellow on hover */
+}
+
+.flower:hover .pattern1 {
+    background: linear-gradient(135deg, rgba(255, 255, 0, 0.8) 25%, rgba(255, 204, 0, 0.8) 50%, rgba(255, 153, 0, 0.8) 75%);
+}
+
+.flower:hover .pattern2 {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8) 25%, rgba(0, 204, 204, 0.8) 50%, rgba(0, 153, 153, 0.8) 75%);
+}
+
+.flower:hover .pattern3 {
+    background: linear-gradient(135deg, rgba(204, 255, 0, 0.8) 25%, rgba(153, 204, 0, 0.8) 50%, rgba(102, 153, 0, 0.8) 75%);
+}
+
+.flower:hover .pattern4 {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.8) 25%, rgba(204, 0, 204, 0.8) 50%, rgba(153, 0, 153, 0.8) 75%);
+}
