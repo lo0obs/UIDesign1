@@ -141,9 +141,10 @@
         My favorite song is Sicko Mode by Travis Scott.<br>
         My favorite website is <a href="https://spacetypegenerator.com/clutter.html">https://spacetypegenerator.com/clutter.html</a></p>
       <div id="button-container">
-        <button id="open-button">My House</button>
-        <button id="thing-button">My Thing</button>
-        <button href="https://www.naver.com" target="_blank" id="css-still-life-button">CSS Still Life</button> 
+        <button id="open-button">ASCII House</button>
+        <button id="thing-button">ASCII Thing</button>
+        <button href="https://www.naver.com" target="_blank" id="css-still-life-button">CSS Still Life</button>
+        <button id="movie-log-button">MOVIE LOG.</button>
       </div>
       <div id="css-still-life">
         <div class="grid-item" style="background-image: url('image1.jpg');"></div>
@@ -244,7 +245,10 @@ oooooooooooooooooooooooooooooooooooI  Ioooooooooooo
       document.getElementById("ascii-art-house").style.display = "none";
     });
     document.getElementById("css-still-life-button").addEventListener("click", function() {
-    window.location.href = "./MOVIELOG/index.html";
+    window.location.href = "./codingfromlife/index.html";
+    });
+    document.getElementById("movie-log-button").addEventListener("click", function() { // New event listener
+        window.location.href = "./MOVIELOG/index.html"; // Redirection link
     });
   </script>
 </body>
