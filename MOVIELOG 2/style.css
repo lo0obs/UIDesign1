@@ -1,0 +1,135 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--almostblack,#1F1F1F);
+}
+canvas {
+  display: block;
+}
+
+.up,.down{
+  color: white;
+}
+.selectItem{
+  display: flex;
+  height: 292px;
+  padding: 28px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 28px;
+box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+  
+  
+}
+
+svg{
+  background-color: transparent;
+  border: none;
+}
+#selectMenu{
+width: Fixed (353px)px;
+height: Hug (622.6px)px;
+top: 148px;
+left: 20px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.colorSel{
+  display: flex;
+  width: 62px;
+  height: 31px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 12px;
+flex-shrink: 0;
+border-radius: 28px;
+box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+border: none;
+}
+#colorSelection{
+  display: flex;
+width: 337px;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+#canvasContainer{
+width: 353px;
+height: 530px;
+flex-shrink: 0;
+border-radius: 28px;
+overflow: hidden;
+}
+
+.checked{
+  visibility: hidden;
+}
+
+.leftBtn{
+  display: inline-block;
+  overflow: hidden;
+  color: var(--darkgray, #4C4D55);
+font-family: "SUIT Variable";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.56px;
+text-transform: uppercase;
+cursor: pointer;
+}
+
+.rightBtn{
+  display: inline-block;
+  color: var(--yellow, #CF0);
+font-family: "SUIT Variable";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.56px;
+text-transform: uppercase;
+cursor: pointer;
+}
+span.leftBtn, span.rightBtn{
+  display: inline-block;
+  gap: 8px;
+  width: 88px;
+  height: 26px;
+}
+
+object.leftBtn,object.rightBtn{
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-color: #1F1F1F;
+}
+
+.textBox{
+  display: flex;
+transform: rotate(0.146deg);
+padding: 6px 6px 6px 20px;
+align-items: center;
+gap: 20px;
+align-self: stretch;
+border-radius: 30px;
+background: var(--gray, #E5E6E7);
+}
+
+.Writed{
+  display: flex;
+width: 42px;
+height: 32px;
+padding: 10px 12px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 1000px;
+background: var(--middlegray, #999AA0);
+}
