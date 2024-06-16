@@ -79,7 +79,7 @@ function pageBtn() {
         currentStep--;
         if (currentStep < 0) currentStep = 0;
         localStorage.setItem('currentStep', currentStep);
-        window.location.href = htmlLink[currentStep];
+        window. location.href = window.location.href.includes("HTMLstep") ? htmlLink[currentStep].replace("/HTMLstep", "") : htmlLink[currentStep]
     });
   });
 
@@ -88,7 +88,7 @@ function pageBtn() {
         currentStep++;
         if (currentStep > 4) currentStep = 4;
         localStorage.setItem('currentStep', currentStep);
-        window.location.href = htmlLink[currentStep];
+        window.location.href = window.location.href.includes("HTMLstep") ? htmlLink[currentStep].replace("/HTMLstep", ""): htmlLink[currentStep]
     });
   });
 }
@@ -124,18 +124,18 @@ function colorSelect() {
 
 function qMovie() {
   createQ('영화 제목', '을 적어주세요');
-  createInputBox('Mtitle', '이름을 입력하세요', 'text');
+  createInputBox('Mtitle', '영화 제목을 적어주세요', 'text');
   createQ('감독 이름', '을 적어주세요');
-  createInputBox('Mdirector', '이름을 입력하세요', 'text');
+  createInputBox('Mdirector', '이름을 적어주세요', 'text');
   createQ('10점 만점', '중 총점을 매겨주세요');
   createInputBox('Mscore', '숫자를 입력하세요', 'number');
 }
 
 function qReview() {
   createQ('리뷰 제목', '을 적어주세요');
-  createInputBox('Rtitle', '리뷰 제목을 입력하세요', 'text');
+  createInputBox('Rtitle', '리뷰 제목을 적어주세요', 'text');
   createQ('리뷰 내용', '을 적어주세요');
-  createInputBox('Rcontent', '리뷰 내용을 입력하세요', 'text');
+  createInputBox('Rcontent', '리뷰 내용을 적어주세요', 'text');
 }
 
 function createInputBox(id, placeH, type) {
