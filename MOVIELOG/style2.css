@@ -1,0 +1,96 @@
+/* style.css */
+html {
+  background-color: #4C4D55;
+}
+body{
+  background-color: #4C4D55;
+}
+
+.content {
+  display: flex;
+  width: 393px;
+  height: 856px;
+  position: relative; /* Changed from absolute to relative */
+}
+
+.up {
+  display: flex;
+  position: relative; /* Changed from inherit to relative */
+  z-index: 10;
+  top:400px
+}
+.down{
+  display: flex;
+  position: relative; /* Changed from inherit to relative */
+  z-index: 10;
+  top:1100px
+}
+
+.back {
+  z-index: 5;
+}
+
+.back>object{
+  margin-right: 10px;
+}
+#canvasContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  position: absolute; /* Changed from inherit to absolute */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 611px;
+}
+
+.down {
+  margin-top: 58px;
+  margin-left: 250px;
+  display: flex;
+  z-index: 20;
+  position: absolute;
+}
+.down>button{
+  display: flex;
+  width: 140px;
+  height: 40px;
+
+justify-content: center;
+align-items: center;
+border: none;
+outline: none;
+
+align-self: stretch;
+border-radius: 30px;
+background: var(--yellow, #CF0);
+}
+.rightBtn{
+  display: inline-block;
+  font-family: "SUIT Variable";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: right;
+  align-items: right;
+  width: auto;
+  height: 27px;
+  text-align: right;
+  z-index: 10;
+  position: relative;
+  right: 170px;
+  top: 40px;
+
+}
+object{
+  display: inline;
+  margin: 4px;
+}
+.rightBtn>span{
+  width: 100px;
+  position: relative;
+  left: 40px;
+  bottom: 25px;
+}
