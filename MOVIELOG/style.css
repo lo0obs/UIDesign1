@@ -9,11 +9,14 @@ canvas {
 
 .up,.down{
   color: white;
+  width: 353px;
 }
 .selectItem{
+  position: inherit;
+  width: 350px;
   display: flex;
-  height: 292px;
-  padding: 28px 24px;
+  height: 200px;
+  margin: 28px 24px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
@@ -21,26 +24,74 @@ canvas {
   align-self: stretch;
   border-radius: 28px;
 box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-  
+color: var(--almostblack, #1F1F1F);
+
+
   
 }
 
+.selectItem>h3{
+  font-family: "SUIT Variable";
+font-size: 36px;
+font-style: normal;
+font-weight: 644;
+line-height: normal;
+letter-spacing: -1.08px;
+text-transform: uppercase;
+margin-left: 20px;
+}
+
+.selectItem>object{
+  position: relative;
+  left: 260px;
+}
 svg{
   background-color: transparent;
   border: none;
 }
+
+#mainContents{
+  width: 393px;
+  height: 900px;
+  position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 #selectMenu{
-width: Fixed (353px)px;
-height: Hug (622.6px)px;
-top: 148px;
-left: 20px;
-gap: 0px;
-opacity: 0px;
+width: inherit;
+height: inherit;
+position: inherit;
+
+}
+
+.roundbox{
+  z-index: -10;
+  display: inline-block;
+  position: relative;
+  top: 120px;
+  width: 194px;
+  height: 104px;
+  flex-shrink: 0;
+  border-radius: 30px 30px 0px 0px;
+background: var(--black, #000);
+}
+.backbox{
+  z-index: -5;
+  width: 393px;
+height: 640px;
+position: relative;
+top:115px;
+flex-shrink: 0;
+border-radius: 0px 0px 30px 30px;
+background: var(--black, #000);
 
 }
 
 .colorSel{
-  display: flex;
+  z-index: 3;
+  
+  position: relative;
   width: 62px;
   height: 31px;
 flex-direction: column;
@@ -52,19 +103,24 @@ border-radius: 28px;
 box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 border: none;
 }
+
+
+
 #colorSelection{
-  display: flex;
+display: flex;
 width: 337px;
 justify-content: space-between;
 align-items: flex-start;
+margin-bottom: 100px;
 }
 
 #canvasContainer{
 width: 353px;
-height: 530px;
+height: 515px;
 flex-shrink: 0;
 border-radius: 28px;
 overflow: hidden;
+margin: 20px;
 }
 
 .checked{
@@ -103,6 +159,10 @@ span.leftBtn, span.rightBtn{
   width: 88px;
   height: 26px;
 }
+span.rightBtn{
+  text-align: right;
+}
+
 
 object.leftBtn,object.rightBtn{
   display: inline-block;
@@ -112,24 +172,138 @@ object.leftBtn,object.rightBtn{
 }
 
 .textBox{
+  width: 351.439px;
+  height: 44px;
   display: flex;
 transform: rotate(0.146deg);
-padding: 6px 6px 6px 20px;
+margin: 6px 6px 6px 20px;
 align-items: center;
 gap: 20px;
 align-self: stretch;
 border-radius: 30px;
-background: var(--gray, #E5E6E7);
+background: #E5E6E7;
+margin-bottom: 24px;
 }
 
-.Writed{
-  display: flex;
+
+.writed{
+display: flex;
 width: 42px;
 height: 32px;
-padding: 10px 12px;
+margin: 10px 12px;
 justify-content: center;
 align-items: center;
 gap: 10px;
 border-radius: 1000px;
 background: var(--middlegray, #999AA0);
+}
+
+.inputBox{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--almostblack, #1F1F1F);
+font-family: "SUIT Variable";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 107.141%; /* 15px */
+letter-spacing: -0.42px;
+text-transform: uppercase;
+}
+
+.inputBox:focus{
+  border: none;
+  outline: none;
+
+}
+
+.mark{
+  color: var(--yellow, #CF0);
+text-align: center;
+font-family: "SUIT Variable";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.56px;
+text-transform: uppercase;
+}
+
+.normal{
+  color: var(--white, #FFF);
+font-family: "SUIT Variable";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.56px;
+text-transform: uppercase;
+}
+
+.cMenu{
+  color: var(--white, #FFF);
+font-family: "SUIT Variable";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.6px;
+text-transform: uppercase;
+}
+
+.up{
+  display: flex;
+width: 353px;
+justify-content: space-between;
+align-items: flex-start;
+margin: 20px;
+margin-top: 130px;
+
+}
+
+.down{
+  display: flex;
+width: 350.912px;
+transform: rotate(-0.146deg);
+flex-direction: column;
+align-items: center;
+gap: 14px;
+margin: 20px;
+}
+
+.down>h3{
+  color: var(--white, #FFF);
+font-family: "SUIT Variable";
+font-size: 32px;
+font-style: normal;
+font-weight: 644;
+line-height: 107.141%; /* 34.285px */
+letter-spacing: -0.96px;
+text-transform: uppercase;
+margin: auto;
+}
+
+.content{
+  width: 393px;
+  height: 856px;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.question{
+  text-align: center;
+width: 393px;
+flex-direction: column;
+gap: 12px;
+}
+
+.inputBox{
+  margin-left: 30px;
 }

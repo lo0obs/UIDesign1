@@ -1,3 +1,4 @@
+
 let c = ['#CCFF00', '#FC3F56', '#E5E6E7', '#7C2CFF', '#FEC3D9'];
 let almostblack = '#1F1F1F';
 let darkgray = "#4C4D55";
@@ -9,21 +10,18 @@ let colorDic = {
   'cinematic': c[4]
 };
 
-let htmlLink = ['/index.html', '/HTMLstep/step1.html', '/HTMLstep/step2.html', '/HTMLstep/step3.html', '/HTMLstep/step4.html', '/HTMLstep/step5.html'];
-let currentMenu = '';
-let currentColor = '';
+let htmlLink = ['/index.html', '/HTMLstep/step1.html', '/HTMLstep/step2.html', '/HTMLstep/step2r.html','/HTMLstep/step5.html'];
+let currentMenu = localStorage.getItem('currentMenu') || '';
+let currentColor = localStorage.getItem('currentColor') || '';
 let currentStep = parseInt(localStorage.getItem('currentStep')) || 0;
-let qNum = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
   setup();
   pageBtn();
-  init(currentStep);
   const selectItems = document.querySelectorAll("#selectMenu .selectItem");
   selectItems.forEach(item => {
     item.addEventListener("click", function() {
-      const parentId = item.id;
-      currentMenu = parentId;
+      currentMenu = item.id;
       localStorage.setItem('currentMenu', currentMenu);
       currentStep = 1;
       localStorage.setItem('currentStep', currentStep);
@@ -36,53 +34,65 @@ function setup() {
   let items = document.getElementsByClassName("selectItem");
   for (let i = 0; i < items.length; i++) {
     items[i].style.backgroundColor = c[i];
-    items[i].style.zIndex = i;
+    items[i].style.zIndex = i+10;
+    items[i].style.top=200+100*i+'px';
   }
 }
 
 function init(step) {
   currentStep = step;
-  localStorage.setItem('currentStep', currentStep);
+  if(currentStep>0){
+    let Mname = document.querySelector('.cMenu'); 
+    if (Mname) {
+      Mname.innerHTML = currentMenu; 
+    }
+  }
+
+  if (currentStep==2||currentStep==3){
+    let box = document.getElementById('qBox');
+    switch (currentStep) {
+      case 2:
+        box.innerHTML='';
+        qMovie();
+        break;
+      case 3:
+        box.innerHTML='';
+        qReview();
+        break;
+    }
+  }
+  
   switch (currentStep) {
     case 1:
       colorSelect();
       break;
-    case 2:
-      qStep();
-      break;
+
   }
 }
 
 function pageBtn() {
-  let Lbtn = document.getElementsByClassName('leftBtn');
-  let Rbtn = document.getElementsByClassName('rightBtn');
-  for (let l of Lbtn) {
-    l.addEventListener('click', function() {
-      if (currentStep == 2 && qNum == 1) {
-        qNum = 0;
-      } else if (currentStep == 2 && qNum == 2) {
-        qNum = 1;
-      } else {
-        currentStep -= 1;
-        if (currentStep < 0) { currentStep = 0; }
+  let Lbtn = document.querySelectorAll('.leftBtn');
+  let Rbtn = document.querySelectorAll('.rightBtn');
+  
+  Lbtn.forEach(btn => {
+    btn.addEventListener('click', function() {
+        currentStep--;
+        if (currentStep < 0) currentStep = 0;
         localStorage.setItem('currentStep', currentStep);
         window.location.href = htmlLink[currentStep];
-      }
     });
-  }
-  for (let r of Rbtn) {
-    r.addEventListener('click', function() {
-      if (currentStep == 2 && qNum == 0) {
-        qNum = 1;
-      } else if (currentStep != 2 || qNum == 2) {
-        currentStep += 1;
-        if (currentStep > 5) { currentStep = 5; }
+  });
+
+  Rbtn.forEach(btn => {
+    btn.addEventListener('click', function() {
+        currentStep++;
+        if (currentStep > 4) currentStep = 4;
         localStorage.setItem('currentStep', currentStep);
         window.location.href = htmlLink[currentStep];
-      }
     });
-  }
+  });
 }
+
 
 function colorSelect() {
   let colBtns = document.getElementsByClassName('colorSel');
@@ -102,7 +112,6 @@ function colorSelect() {
       clickedButton.style.backgroundColor = almostblack;
       clickedButton.style.border = `4px solid ${currentColor}`;
       localStorage.setItem('currentColor', currentColor);
-      // Update canvas background color
       let canvasContainer = document.getElementById('canvasContainer');
       if (canvasContainer) {
         canvasContainer.style.backgroundColor = currentColor;
@@ -112,56 +121,51 @@ function colorSelect() {
   }
 }
 
-function qStep() {
-  switch (qNum) {
-    case 0:
-      qMovie();
-      break;
-    case 1:
-      qReview();
-      break;
-  }
-}
 
 function qMovie() {
   createQ('영화 제목', '을 적어주세요');
-  createInput('Mtitle', '이름을 입력하세요', 'text');
+  createInputBox('Mtitle', '이름을 입력하세요', 'text');
   createQ('감독 이름', '을 적어주세요');
-  createInput('Mdirector', '이름을 입력하세요', 'text');
+  createInputBox('Mdirector', '이름을 입력하세요', 'text');
   createQ('10점 만점', '중 총점을 매겨주세요');
-  createInput('Mscore', '숫자를 입력하세요', 'number');
+  createInputBox('Mscore', '숫자를 입력하세요', 'number');
 }
 
 function qReview() {
-  // Placeholder function
+  createQ('리뷰 제목', '을 적어주세요');
+  createInputBox('Rtitle', '리뷰 제목을 입력하세요', 'text');
+  createQ('리뷰 내용', '을 적어주세요');
+  createInputBox('Rcontent', '리뷰 내용을 입력하세요', 'text');
 }
 
-function createInput(id, placeH, type) {
+function createInputBox(id, placeH, type) {
   let box = document.getElementById('qBox');
   let textBox = document.createElement('div');
-  let input = document.createElement('input');
+  let inputBox = document.createElement('input');
   let writed = document.createElement('div');
   let vec = document.createElement('object');
   
-  input.placeholder = placeH;
-  input.type = type;
-  input.id = id;
+  inputBox.placeholder = placeH;
+  inputBox.type = type;
+  inputBox.id = id;
+  inputBox.classList.add('inputBox');
+  
 
   textBox.className = 'textBox';
   writed.className = 'writed';
+  writed.style.width='42px';
   vec.className = 'vec';
-  vec.data = '';
+  vec.data = '../icon/Write.svg';
 
-  textBox.appendChild(input);
+  writed.appendChild(vec);
+  textBox.appendChild(inputBox);
   textBox.appendChild(writed);
-  textBox.appendChild(vec);
   box.appendChild(textBox);
 
-  input.addEventListener('input', function() {
-    let inputValue = input.value;
+  inputBox.addEventListener('input', function() {
+    let inputValue = inputBox.value;
     if (inputValue) {
       writed.style.backgroundColor = c[0];
-      textBox.style.backgroundColor = 'white';
       vec.data = '../icon/Checked.svg';
     } else {
       writed.style.backgroundColor = '#999AA0';
@@ -174,6 +178,6 @@ function createQ(strong, text) {
   let box = document.getElementById('qBox');
   let textQ = document.createElement('div');
   textQ.className = 'question';
-  textQ.innerHTML = `<p class='mark'>${strong}</p><p class='nomal'>${text}</p>`;
+  textQ.innerHTML = `<span class='mark'>${strong}</span><span class='normal'>${text}</span>`;
   box.appendChild(textQ);
 }
