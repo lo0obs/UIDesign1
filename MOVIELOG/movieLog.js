@@ -10,7 +10,7 @@ let colorDic = {
   'cinematic': c[4]
 };
 
-let htmlLink = ['/index.html', '/HTMLstep/step1.html', '/HTMLstep/step2.html', '/HTMLstep/step2r.html','/HTMLstep/step5.html'];
+let htmlLink = ['./index.html', './HTMLstep/step1.html', './HTMLstep/step2.html', './HTMLstep/step2r.html','./HTMLstep/step5.html'];
 let currentMenu = localStorage.getItem('currentMenu') || '';
 let currentColor = localStorage.getItem('currentColor') || '';
 let currentStep = parseInt(localStorage.getItem('currentStep')) || 0;
