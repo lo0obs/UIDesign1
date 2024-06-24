@@ -10,12 +10,12 @@ body{
   display: flex;
   width: 393px;
   height: 856px;
-  position: relative; /* Changed from absolute to relative */
+  position: relative; 
 }
 
 .up {
   display: flex;
-  position: relative; /* Changed from inherit to relative */
+  position: relative; 
   z-index: 10;
   top:400px
 }
