@@ -38,7 +38,6 @@ function setup() {
     for (let i = 0; i < items.length; i++) {
         items[i].style.backgroundColor = c[i];
         items[i].style.zIndex = i + 10;
-        items[i].style.top = 200 + 100 * i + 'px';
     }
 }
 
@@ -81,7 +80,6 @@ function init(step) {
 function pageBtn() {
     let Lbtn = document.querySelectorAll('.leftBtn');
     let Rbtn = document.querySelectorAll('.rightBtn');
-
     Lbtn.forEach(btn => {
         btn.addEventListener('click', function() {
             saveCurrentData();  

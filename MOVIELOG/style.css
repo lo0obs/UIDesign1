@@ -11,78 +11,9 @@ canvas {
   color: white;
   width: 353px;
 }
-.selectItem{
-  position: inherit;
-  width: 350px;
-  display: flex;
-  height: 200px;
-  margin: 28px 24px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  flex-shrink: 0;
-  align-self: stretch;
-  border-radius: 28px;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
-  color: var(--almostblack, #1F1F1F);
-}
 
-.selectItem>h3{
-  font-family: "SUIT Variable";
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 644;
-  line-height: normal;
-  letter-spacing: -1.08px;
-  text-transform: uppercase;
-  margin-left: 20px;
-}
 
-.selectItem>object{
-  position: relative;
-  left: 260px;
-}
 
-svg{
-  background-color: transparent;
-  border: none;
-}
-
-#mainContents{
-  width: 393px;
-  height: 900px;
-  position: absolute; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#selectMenu{
-  width: inherit;
-  height: inherit;
-  position: inherit;
-}
-
-.roundbox{
-  z-index: -10;
-  display: inline-block;
-  position: relative;
-  top: 120px;
-  width: 194px;
-  height: 104px;
-  flex-shrink: 0;
-  border-radius: 30px 30px 0px 0px;
-  background: var(--black, #000);
-}
-.backbox{
-  z-index: -5;
-  width: 393px;
-  height: 640px;
-  position: relative;
-  top: 115px;
-  flex-shrink: 0;
-  border-radius: 0px 0px 30px 30px;
-  background: var(--black, #000);
-}
 
 .colorSel{
   z-index: 3;
@@ -103,7 +34,7 @@ svg{
   width: 337px;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   justify-content: center;
   align-items: center;
 }
@@ -115,6 +46,8 @@ svg{
   border-radius: 28px;
   overflow: hidden;
   margin: 20px;
+  position: relative;
+  top: -20px;
 }
 
 .checked{
@@ -124,47 +57,56 @@ svg{
   visibility: hidden;
 }
 
-.leftBtn{
-  display: inline-block;
-  overflow: hidden;
-  color: var(--darkgray, #4C4D55);
-  font-family: "SUIT Variable";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
 
-.rightBtn{
-  display: inline-block;
-  color: var(--yellow, #CF0);
-  font-family: "SUIT Variable";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-span.leftBtn, span.rightBtn{
+span.leftBtn, span.rightBtn {
   display: inline-block;
   gap: 8px;
   width: 88px;
   height: 26px;
-}
-span.rightBtn{
-  text-align: right;
+  position: relative;
+  cursor: pointer;
 }
 
-object.leftBtn,object.rightBtn{
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  background-color: #1F1F1F;
+
+span.leftBtn>object.leftBtn {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+span.leftBtn>p {
+  position: absolute;
+  color: var(--darkgray, #4C4D55);
+  right: 0;
+  top: 0;
+  margin: 0;
+}
+
+span.rightBtn>object.rightBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+span.rightBtn>p {
+  color: var(--yellow, #CF0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  margin-left: 18px;
+
+}
+
+
+span.leftBtn>p, span.rightBtn>p {
+  font-family: "SUIT Variable";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
 }
 
 .textBox{
@@ -269,6 +211,13 @@ object.leftBtn,object.rightBtn{
   line-height: normal;
   letter-spacing: -0.6px;
   text-transform: uppercase;
+  text-align: center;
+}
+.upTitle{
+  display: block;
+  position: relative;
+  top: -30px;
+
 }
 
 .up{
@@ -278,6 +227,19 @@ object.leftBtn,object.rightBtn{
   align-items: flex-start;
   margin: 20px;
   margin-top: 130px;
+}
+.stepNum{
+display: block;
+color: var(--middlegray, #999AA0);
+font-family: "SUIT Variable";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.48px;
+text-transform: uppercase;
+text-align: center;
+margin: 0;
 }
 
 .down{

@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (p.reviewAarray && p.reviewTitle) {
             switch (p.currentColor) {
                 case c[0]:
-                    y = 216+32;
-                    ygap = 113;
+                    y = 216;
+                    ygap = 113+25;
                     if (p.reviewAarray[0] && p.reviewTitle[0]) p.textReview(p.reviewTitle[0], p.reviewAarray[0], x, y);
                     if (p.reviewAarray[1] && p.reviewTitle[1]) p.textReview(p.reviewTitle[1], p.reviewAarray[1], x + xgap, y);
                     if (p.reviewAarray[2] && p.reviewTitle[2]) p.textReview(p.reviewTitle[2], p.reviewAarray[2], x, y + ygap);
@@ -162,28 +162,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     break;
     
                 case c[1]:
-                    y = 166.5+32;
+                    y = 166.5+25;
                     if (p.reviewAarray[0] && p.reviewTitle[0]) p.textReview(p.reviewTitle[0], p.reviewAarray[0], x, y);
                     if (p.reviewAarray[1] && p.reviewTitle[1]) p.textReview(p.reviewTitle[1], p.reviewAarray[1], x + xgap, y);
                     if (p.reviewAarray[2] && p.reviewTitle[2]) p.textReview(p.reviewTitle[2], p.reviewAarray[2], x, y + ygap);
                     if (p.reviewAarray[3] && p.reviewTitle[3]) p.textReview(p.reviewTitle[3], p.reviewAarray[3], x + xgap, y + ygap);
                     break;
                 case c[2]:
-                    y = 313+32;
+                    y = 313+25;
                     if (p.reviewAarray[0] && p.reviewTitle[0]) p.textReview(p.reviewTitle[0], p.reviewAarray[0], x, y);
                     if (p.reviewAarray[1] && p.reviewTitle[1]) p.textReview(p.reviewTitle[1], p.reviewAarray[1], x + xgap, y);
                     if (p.reviewAarray[2] && p.reviewTitle[2]) p.textReview(p.reviewTitle[2], p.reviewAarray[2], x, y + ygap);
                     if (p.reviewAarray[3] && p.reviewTitle[3]) p.textReview(p.reviewTitle[3], p.reviewAarray[3], x + xgap, y + ygap);
                     break;
                 case c[3]:
-                    y = 220+32;
+                    y = 220+25;
                     if (p.reviewAarray[0] && p.reviewTitle[0]) p.textReview(p.reviewTitle[0], p.reviewAarray[0], x, y);
                     if (p.reviewAarray[1] && p.reviewTitle[1]) p.textReview(p.reviewTitle[1], p.reviewAarray[1], x + xgap, y);
                     if (p.reviewAarray[2] && p.reviewTitle[2]) p.textReview(p.reviewTitle[2], p.reviewAarray[2], x, y + ygap);
                     if (p.reviewAarray[3] && p.reviewTitle[3]) p.textReview(p.reviewTitle[3], p.reviewAarray[3], x + xgap, y + ygap);
                     break;
                 case c[4]:
-                    y = 196+32;
+                    y = 196+25;
                     ygap = 69;
                     if (p.reviewAarray[0] && p.reviewTitle[0]) p.textReview(p.reviewTitle[0], p.reviewAarray[0], x, y);
                     if (p.reviewAarray[1] && p.reviewTitle[1]) p.textReview(p.reviewTitle[1], p.reviewAarray[1], x + xgap, y);
@@ -194,34 +194,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
     
-    p.textReview = function (title, content, x, y) {
-
-      function insertLineBreaks(input) {
-        let output = '';
-        for (let i = 0; i < input.length; i++) {
-            output += input[i];
-            if ((i + 1) % 14 === 0) {
-                output += '\n';
-            }
-        }
-        return output;
-    }
     
-      if (p.sult && title && content) {
+
+    p.textReview = function (title, content, x, y) {
+      let boxWidth = 140, boxHeight = 40;
+        if (p.sult && title && content) {
             p.textFont(p.sult);
             p.fill('#1F1F1F');
-            p.textStyle(p.BOLD);
+            p.textStyle(p.NORMAL);
             p.stroke('#1F1F1F');
             p.strokeWeight(1);
             p.textSize(14);
             p.text(title, x, y);
-    
             p.textSize(12);
             p.strokeWeight(0.5);
-            
-            p.text(insertLineBreaks(content), x, y + 14, '140px', '40px');
+            p.textRegion(x, y+6, boxWidth, boxHeight, content, 10);
         }
     };
+    
+    p.textRegion = function (x, y, width, height, text, textSize) {
+
+      
+      p.fill(0);
+      p.textSize(textSize);
+
+      let words = text.split(' ');
+      let line = '';
+      let yOffset = 0;
+      
+      for (let n = 0; n < words.length; n++) {
+          let testLine = line + words[n] + ' ';
+          let testWidth = p.textWidth(testLine);
+          
+          if (testWidth > width - 10) {
+              if (p.textWidth(words[n]) > width - 10) {
+                  let chars = words[n].split('');
+                  for (let m = 0; m < chars.length; m++) {
+                      let testLine = line + chars[m];
+                      if (p.textWidth(testLine) > width - 10) {
+                          p.text(line, x + 5, y + yOffset + textSize);
+                          line = chars[m];
+                          yOffset += textSize;
+                          if (yOffset + textSize > height) {
+                              return;
+                          }
+                      } else {
+                          line = testLine;
+                      }
+                  }
+                  line += ' ';
+              } else {
+                  p.text(line, x, y + yOffset + textSize);
+                  line = words[n] + ' ';
+                  yOffset += textSize;
+                  if (yOffset + textSize > height) {
+                      return;
+                  }
+              }
+          } else {
+              line = testLine;
+          }
+      }
+      p.text(line.trim(), x, y + yOffset + textSize);
+  };
+    
     
 
       p.style1=function(){
